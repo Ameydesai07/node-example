@@ -1,0 +1,82 @@
+
+<h2 class="page-header" style="margin: 29px 0 20px">Dashboard<span style="float:right;">Welcome&nbsp;{{#if item}}{{item.username}}{{/if}} </span> </h2>
+
+
+    {{# if item}}
+
+        <div class="media">
+    <div class="media-left">
+        <!--<a href="#">-->
+           <!--<img src="/images/default-user.jpg" class="img-rounded" alt="Rounded Image">-->
+        <!--</a>-->
+
+        <div id="box">
+            <img src="{{item.imgurl}}"  width="100%" height="100%">
+          </div>
+    </div>
+
+    <div class="media-body">
+        <h4 class="media-heading">{{item.username}} &nbsp;<small><i>Created on {{item.createddate}}</i></small></h4>
+
+            <hr>
+            <p><b>Email:</b> {{item.email}}</p>
+            <p><b>Name:</b> {{item.firstname}}&nbsp;{{item.lastname}}</p>
+
+            <p style="float: right;"><i>Last Updated On:</i> {{item.lastupdated}}</p>
+    </div>
+</div>
+
+        <div class="media media-edit" style="display: none;">
+            <div class="media-left">
+                <div id="box">
+                    <img src="{{item.imgurl}}" class="round-profile-image-edit"  width="100%" height="100%">
+                    <div id="overlay">
+                           <!--<img  class="round-profile-image-edit" >-->
+                        <span class="glyphicon glyphicon-camera" style="color: white;font-size: 40px; top: 37%;"></span>
+
+                      </div>
+
+                </div>
+                <span><b>Upload Your Avatar</b></span>
+
+            </div>
+
+            <div class="media-body">
+                <h4 class="media-heading">Edit Information</h4>
+
+                <hr>
+                <form action="/edit" method="post">
+                    <div class="input-group form-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"> Username</span></span>
+                        <input type="text" class="form-control" value="{{item.username}}" placeholder="" name="eunm">
+                    </div>
+
+                    <input id="user_avatar" class="select-profile-pic"  type="file" class="btn btn-default" style="display:none;position: relative"/>
+
+                    <input type="hidden" id="pro_img" name="image_src" />
+                    <input type="hidden" id="objectid" name="dbid" value="{{item._id}}"/>
+
+                    <div class="input-group form-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"> Firstname</span></span>
+                        <input type="text" class="form-control" value="{{item.firstname}}" placeholder="" name="efnm">
+                    </div>
+                    <div class="input-group form-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"> Lastname</span></span>
+                        <input type="text" class="form-control" value="{{item.lastname}}" placeholder="" name="elnm">
+                    </div>
+                    <div class="input-group form-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"> Email</span></span>
+                        <input type="email" class="form-control" value="{{item.email}}" placeholder="" name="eemail">
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                </form>
+
+            </div>
+        </div>
+
+    {{/if}}
+
+
+

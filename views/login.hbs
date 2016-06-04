@@ -1,0 +1,18 @@
+<h2 class="page-header" style="margin: 29px 0 20px;">Login</h2>
+{{#if errors}}
+    {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+    {{/each}}
+{{/if}}
+<form action="/login" method="post">
+    <div class="input-group form-group">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+        <input type="email" class="form-control" placeholder="Email" name="lunm">
+    </div>
+    <div class="input-group form-group">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input type="password" class="form-control" placeholder="password" name="lpass">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>

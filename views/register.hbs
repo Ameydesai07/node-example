@@ -1,0 +1,36 @@
+
+    <h2 class="page-header" style="margin: 29px 0 20px">Create an account</h2>
+    {{#if errors}}
+        {{#each errors}}
+            <div class="alert alert-danger">{{msg}}</div>
+        {{/each}}
+    {{/if}}
+    <form action="/register" method="post">
+        <div class="input-group form-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+            <input type="text" class="form-control" placeholder="Username" name="unm">
+        </div>
+        <div class="input-group form-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+            <input type="text" class="form-control" placeholder="Firstname" name="fname">
+        </div>
+        <div class="input-group form-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+            <input type="text" class="form-control" placeholder="Lastname" name="lname">
+        </div>
+        <div class="input-group form-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+            <input type="text" class="form-control" placeholder="Email" name="email">
+        </div>
+        <div class="input-group form-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+            <input type="password" class="form-control" placeholder="password" name="pass1">
+        </div>
+        <div class="input-group form-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+            <input type="password" class="form-control" placeholder="confirm password" name="pass2">
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+<!--<script src=" /javascripts/timeouts.js"></script>-->
+
